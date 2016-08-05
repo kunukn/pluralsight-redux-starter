@@ -26,13 +26,13 @@ export default {
     ],
     module: {
         loaders: [
-            { test: /(\.js$|\.jsx$)/, include: include('src'), loaders: ['babel'] },
-            { test: /\.tsx$/, include: include('src'), loaders: ['babel'] }, //ts-loader
-            { test: /(\.css)$/, xinclude: include('src'), loaders: ['style', 'css'] },
-            { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, xinclude: include('src'), loader: 'file' },
-            { test: /\.(woff|woff2)$/, xinclude: include('src'), loader: 'url?prefix=font/&limit=5000' },
-            { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, xinclude: include('src'), loader: 'url?limit=10000&m)imetype=application/octet-stream' },
-            { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, xinclude: include('src'), loader: 'url?limit=10000&mimetype=image/svg+xml' }
+            { test: /(\.js$|\.jsx$)/, include: [url('src')], loaders: ['babel'] },
+            { test: /\.tsx$/, include: [url('src')], loaders: ['ts-loader'] },
+            { test: /(\.css)$/, include: [url('src'), url('')], loaders: ['style', 'css'] },
+            { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, include: [url('src'), url('')], loader: 'file' },
+            { test: /\.(woff|woff2)$/, include: [url('src'), url('')], loader: 'url?prefix=font/&limit=5000' },
+            { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, include: [url('src'), url('')], loader: 'url?limit=10000&m)imetype=application/octet-stream' },
+            { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, include: [url('src'), url('')], loader: 'url?limit=10000&mimetype=image/svg+xml' }
         ]
     },
     resolve: {
@@ -44,6 +44,6 @@ export default {
     }
 };
 
-function include(filepath) {
-    return path.join(__dirname, filepath);
+function url(filepath) {
+    return path.join(__dirname, filepath || '');
 }
