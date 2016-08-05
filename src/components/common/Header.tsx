@@ -2,6 +2,12 @@ import * as React from 'react';
 import {PropTypes} from 'react';
 import {Link, IndexLink} from 'react-router';
 
+// Test typescript compiler
+interface iMyInterface {
+}
+let a : number = 1;
+// --------------------
+
 const Header = () => {
     return (
         <nav>

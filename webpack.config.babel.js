@@ -28,11 +28,11 @@ export default {
         loaders: [
             { test: /(\.js$|\.jsx$)/, include: [url('src')], loaders: ['babel'] },
             { test: /\.tsx$/, include: [url('src')], loaders: ['ts-loader'] },
-            { test: /(\.css)$/, include: [url('src'), url('')], loaders: ['style', 'css'] },
-            { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, include: [url('src'), url('')], loader: 'file' },
-            { test: /\.(woff|woff2)$/, include: [url('src'), url('')], loader: 'url?prefix=font/&limit=5000' },
-            { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, include: [url('src'), url('')], loader: 'url?limit=10000&m)imetype=application/octet-stream' },
-            { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, include: [url('src'), url('')], loader: 'url?limit=10000&mimetype=image/svg+xml' }
+            { test: /(\.css)$/, include: [url('src'), url('node_modules/bootstrap/dist')], loaders: ['style', 'css'] },
+            { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, include: [url('src'), url('node_modules/bootstrap/dist')], loader: 'file' },
+            { test: /\.(woff|woff2)$/, include: [url('src'), url('node_modules/bootstrap/dist')], loader: 'url?prefix=font/&limit=5000' },
+            { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, include: [url('src'), url('node_modules/bootstrap/dist')], loader: 'url?limit=10000&m)imetype=application/octet-stream' },
+            { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, include: [url('src'), url('node_modules/bootstrap/dist')], loader: 'url?limit=10000&mimetype=image/svg+xml' }
         ]
     },
     resolve: {
