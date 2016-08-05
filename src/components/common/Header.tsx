@@ -1,4 +1,5 @@
-import React, {PropTypes} from 'react';
+import * as React from 'react';
+import {PropTypes} from 'react';
 import {Link, IndexLink} from 'react-router';
 
 const Header = () => {

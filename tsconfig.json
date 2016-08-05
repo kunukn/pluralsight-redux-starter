@@ -1,8 +1,20 @@
 {
     "compilerOptions": {
+        "outDir": "./dist/",
         "target": "es5",
-        "module": "commonjs",
         "sourceMap": true,
+        "noImplicitAny": true,
+        "module": "commonjs",
         "allowJs": true,
-    }
+        "jsx": "react",
+        "moduleResolution": "node",
+        "experimentalDecorators": true
+    },
+    "files": [
+        "./typings/index.d.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        "dist"
+    ]
 }
