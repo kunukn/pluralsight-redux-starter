@@ -2,7 +2,7 @@ import * as React from 'react';
 import {PropTypes} from 'react';
 import CourseListRow from './CourseListRow';
 
-const CourseList = ({courses, deleteCourse}) => {
+const CourseList = ({courses}) => {
   return (
     <table className="table">
       <thead>
@@ -16,7 +16,7 @@ const CourseList = ({courses, deleteCourse}) => {
       </thead>
       <tbody>
       {courses.map(course =>
-        <CourseListRow key="course.id" course={course} />
+        <CourseListRow key={course.id} course={course} />
       )}
       </tbody>
     </table>
